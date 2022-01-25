@@ -1,19 +1,31 @@
 package main
 
 import "fmt"
+
 func main(){
-	var nilai int
-	println("Masukkan nilai : ")
-	fmt.Scanln(&nilai)
-	if nilai>85 && nilai<=100{
-		fmt.Println("Nilai anda A")
-	} else if nilai>75 && nilai<=84{
-		fmt.Println("Nilai anda B")
-	} else if nilai>60 && nilai <=74{
-		fmt.Println("Nilai anda C")
-	} else if nilai>40 && nilai <=59{
-		fmt.Println("Nilai anda D")
-	} else{
-		fmt.Println("Nilai anda E")
+	var ganjil,genap,pilihan,batas int
+	fmt.Println("Pilih")
+	fmt.Println("1. Ganjil")
+	fmt.Println("2. Genap")
+	fmt.Printf("Masukkan Pilihan anda")
+	fmt.Scanln(&pilihan)
+	fmt.Printf("Masukkan batas anda : ")
+	fmt.Scanln(&batas)
+	if pilihan == 1{
+		for i := batas; i >= 1; i--{
+			if i%2 != 0{
+				ganjil = i
+				fmt.Println(ganjil)
+			}
+		}
+	} else if pilihan == 2 {
+		for i := batas; i >= 1; i--{
+			if i%2 == 0{
+				genap = i
+				fmt.Println(genap)
+			}
+		}
+	} else {
+		fmt.Println("Pilihan anda salah")
 	}
 }
